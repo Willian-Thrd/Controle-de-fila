@@ -3,26 +3,55 @@
 }
 
 .letters {
-    -fx-text-fill: green;
+    -fx-text-fill: lime;
     -fx-font-family: 'Courier New';
 }
 
 .Inputs {
-    -fx-background-color: black;
+    -fx-background-color: transparent;
     -fx-background-radius: 25pt;
-    -fx-text-fill: green;
+    -fx-text-fill: lime;
     -fx-font-family: 'Courier New';
-    -fx-border-color: green;
+    -fx-border-color: lime;
     -fx-border-radius: 25pt;
 }
 
 #deliveryPane {
-    -fx-background-color: black;
+    -fx-background-color: transparent;
     -fx-border-color: white;
     -fx-border-width: 2px;
 }
 
 #toggle {
-    -fx-background-color: rgb(23, 23, 23); 
-    -fx-text-fill: green;
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 1px; 
+    -fx-text-fill: red;
+}
+
+.boxes {
+    -fx-background-color: transparent;
+    -fx-text-fill: lime;
+    -fx-border-radius: 25pt;
+    -fx-border-color: lime;
+    -fx-border-width: 1px;
+    -fx-background-radius: 25pt;
+}
+
+.boxes .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: lime;
+}
+
+.boxes .list-cell:selected {
+    -fx-background-color: transparent;
+    -fx-text-fill: lime;
+}
+
+.boxes .list-cell:hover {
+    -fx-background-color: rgb(30, 30, 30);
+}
+
+.boxes .list-view {
+    -fx-background-color: black;
 }

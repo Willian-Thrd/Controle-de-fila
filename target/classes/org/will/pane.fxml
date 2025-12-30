@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -12,31 +13,45 @@
    <children>
       <AnchorPane id="pane" prefHeight="720.0" prefWidth="1080.0">
          <children>
-            <Separator layoutX="250.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="0.0" styleClass="lines" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="0.0" />
-            <Label alignment="CENTER" prefHeight="35.0" prefWidth="300.0" styleClass="letters" text="Menu de pedidos" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <Separator layoutX="250.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="0.0" styleClass="lines" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="400.0" styleClass="letters" text="Menu de pedidos" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0">
                <font>
                   <Font name="Courier New" size="30.0" />
                </font>
             </Label>
-            <Separator layoutY="78.0" prefHeight="0.0" prefWidth="300.0" AnchorPane.leftAnchor="0.0" />
-            <Label layoutX="7.0" layoutY="115.0" styleClass="letters" text="Nome do cliente">
+            <Separator layoutY="78.0" prefHeight="0.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" />
+            <TextField layoutX="194.0" layoutY="111.0" prefWidth="150.0" styleClass="Inputs" />
+            <Label layoutX="49.0" layoutY="150.0" prefWidth="140.0" styleClass="letters" text="Numero do pedido">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="141.0" layoutY="111.0" prefWidth="150.0" styleClass="Inputs" />
-            <Label layoutX="2.0" layoutY="150.0" styleClass="letters" text="Numero do pedido">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="141.0" layoutY="146.0" prefWidth="150.0" styleClass="Inputs" />
-            <ToggleButton id="toggle" fx:id="delivery" layoutX="40.0" layoutY="191.0" mnemonicParsing="false" text="Delivery">
+            <TextField layoutX="194.0" layoutY="146.0" prefWidth="150.0" styleClass="Inputs" />
+            <ToggleButton id="toggle" fx:id="delivery" layoutX="49.0" layoutY="191.0" mnemonicParsing="false" text="Delivery">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </ToggleButton>
-            <AnchorPane fx:id="deliveryPane" layoutX="2.6" layoutY="237.0" prefHeight="200.0" prefWidth="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="778.0" />
+            <AnchorPane fx:id="deliveryPane" layoutX="2.6" layoutY="237.0" prefHeight="300.0" prefWidth="402.0" AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <TextField layoutX="237.0" layoutY="14.0" prefWidth="150.0" styleClass="Inputs" AnchorPane.rightAnchor="12.0" />
+                  <Label layoutX="14.0" layoutY="18.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Endereço do cliente ------" AnchorPane.leftAnchor="12.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="48.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Método de pagamento ------" AnchorPane.leftAnchor="12.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox id="boxes" fx:id="box" layoutX="237.0" layoutY="42.0" prefWidth="150.0" promptText="Escolher" styleClass="boxes" AnchorPane.rightAnchor="12.0" />
+               </children></AnchorPane>
+            <Label layoutX="49.0" layoutY="115.0" prefWidth="140.0" styleClass="letters" text="Nome do cliente">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </children>
 </VBox>
