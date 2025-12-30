@@ -1,0 +1,28 @@
+#pane {
+    -fx-background-color: black;
+}
+
+.letters {
+    -fx-text-fill: green;
+    -fx-font-family: 'Courier New';
+}
+
+.Inputs {
+    -fx-background-color: black;
+    -fx-background-radius: 25pt;
+    -fx-text-fill: green;
+    -fx-font-family: 'Courier New';
+    -fx-border-color: green;
+    -fx-border-radius: 25pt;
+}
+
+#deliveryPane {
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+}
+
+#toggle {
+    -fx-background-color: rgb(23, 23, 23); 
+    -fx-text-fill: green;
+}
