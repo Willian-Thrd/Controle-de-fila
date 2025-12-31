@@ -55,3 +55,27 @@
 .boxes .list-view {
     -fx-background-color: black;
 }
+
+#area {
+    -fx-control-inner-background: black;
+    -fx-border-color: white;
+    -fx-prompt-text-fill: #00ff0070;
+    -fx-text-fill: lime;
+    -fx-border-radius: 14px;
+}
+
+#area .text {
+    -fx-text-fill: lime;
+}
+
+#prt {
+    -fx-background-color: transparent;
+    -fx-text-fill: lime;
+    -fx-background-radius: 25pt;
+    -fx-border-radius: 25pt;
+}
+
+#troco {
+    -fx-border-color: lime;
+    -fx-border-radius: 25pt;
+}

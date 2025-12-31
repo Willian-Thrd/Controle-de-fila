@@ -10,49 +10,54 @@ import javafx.scene.layout.AnchorPane;
 public class MainController extends trueFalse{
 
     @FXML
-    private ToggleButton delivery;
+    private ToggleButton toggle;
     @FXML
     private AnchorPane deliveryPane;
     @FXML
     private ComboBox<String> box, tipoRetirada;
     @FXML
-    private Label labelRetirada;
+    private Label labelRetirada, EnderecoLabel, MetodoLabel, TelLabel;
     @FXML
     private TextField EnderecoCliente, TelCliente;
 
-    ComboBox cb;
-    TextField tf;
-
     @FXML
     private void initialize() {
+        trueFalse(false, true);
+        applicationOpacity(0.5, 1.0);
+ 
         box.getItems().addAll("Débito", "Crédito", "Pix");
         tipoRetirada.getItems().addAll("Retirada", "Balcão");
 
-        delivery.selectedProperty().addListener((obs, oldVal, isOn) -> {
+        toggle.selectedProperty().addListener((obs, oldVal, isOn) -> {
 
-            deliveryPane.lookupAll(".delivery").forEach(node -> {
-            if (node instanceof TextField) {
-                tf = (TextField) node;
-                tf.setEditable(false);
-            }
-
-            if (node instanceof ComboBox) {
-                cb = (ComboBox) node;
-                cb.setMouseTransparent(true);
-                cb.setFocusTraversable(false);
-            }
-        });
-
-            if (isOn) {
-                delivery.setStyle("-fx-background-color: black; -fx-text-fill: lime;");
-                deliveryPane.setStyle("-fx-background-color: black; -fx-border-width: 2px; -fx-border-color: white;");
-                trueFalse(true, false);
-
-            } else {
-                delivery.setStyle("-fx-background-color: black; -fx-text-fill: red;");
-                deliveryPane.setStyle("-fx-background-color: black; -fx-border-width: 2px; -fx-border-color: white;");
+            if (oldVal) {
+                toggle.setStyle("-fx-background-color: black; -fx-text-fill: red;");
                 trueFalse(false, true);
+                applicationOpacity(0.5, 1.0);
+            } else {
+                toggle.setStyle("-fx-background-color: black; -fx-text-fill: lime;");
+                trueFalse(true, false);
+                applicationOpacity(1.0, 0.5);
             }
         });
+    }
+
+    private void applicationOpacity(double opacity, double oapcity2) {
+    
+        TextField[] deliverFields = {EnderecoCliente, TelCliente};
+        Label[] deliveryLabels = {EnderecoLabel, MetodoLabel, TelLabel, labelRetirada};
+
+        for (TextField tf : deliverFields) {
+            tf.setOpacity(opacity);
+        }
+
+        for (Label lbl : deliveryLabels) {
+            lbl.setOpacity(opacity);
+        }
+
+        box.setOpacity(opacity);
+
+        tipoRetirada.setOpacity(oapcity2);
+        labelRetirada.setOpacity(oapcity2);
     }
 }
