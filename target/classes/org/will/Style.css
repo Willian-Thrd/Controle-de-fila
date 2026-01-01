@@ -73,9 +73,29 @@
     -fx-text-fill: lime;
     -fx-background-radius: 25pt;
     -fx-border-radius: 25pt;
+    -fx-border-width: 1px;
+    -fx-border-color: white;
+}
+
+#prt {
+    -fx-background-color: transparent;
+    -fx-text-fill: lime;
+    -fx-background-radius: 25pt;
+    -fx-border-radius: 25pt;
+    -fx-border-width: 1px;
+    -fx-border-color: white;
 }
 
 #numPedido {
     -fx-border-color: lime;
     -fx-border-radius: 25pt;
+}
+
+#cancel {
+    -fx-background-color: transparent;
+    -fx-text-fill: lime;
+    -fx-background-radius: 25pt;
+    -fx-border-radius: 25pt;
+    -fx-border-width: 1px;
+    -fx-border-color: white;
 }

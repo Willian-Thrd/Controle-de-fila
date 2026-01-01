@@ -1,4 +1,5 @@
-org\will\Main.class
 org\will\App.class
 org\will\MainController.class
 org\will\trueFalse.class
+org\will\Main.class
+org\will\listaInputs.class
