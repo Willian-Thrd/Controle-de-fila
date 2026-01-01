@@ -1,4 +1,6 @@
-Este projeto consiste em um controle de fila. Imaginemos que uma lanchonete com problemas na gestão dos pedidos e dos clientes. Então, esse software irá ajudar a fazer baixa nos pedidos e também na sua ordem. 
-(P.S. A lanchonete faz apenas um pedido por vez, se chegar outros pedidos enquanto um já está sendo feito, ele entrará na fila de espera).
+# Controle de Filas
 
-O projeto ainda não está nem na metade, mas se quiser executar só pra poder dar uma olhadinha em como está ficando, execute o arquivo executador.bat
+Este projeto se trata de um controlador de filas.
+
+Ele foi feito para ajudar na organização da gestão dos pedidos, e também para cumpri-los dentro do prazo
+Além de que ele pode ajudar na visualização dos pedidos. Além de ser fácil e prático de mexer.
