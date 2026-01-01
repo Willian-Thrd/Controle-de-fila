@@ -49,7 +49,8 @@ public class MainController extends trueFalse{
         Val("O campo do valor a se pagar está vazio."),
         Pedido("O campo do pedido está vazio."),
         box("O campo do método de pagamento está vazio."),
-        Retirada("O campo do método de retirada está vazio.");
+        Retirada("O campo do método de retirada está vazio."),
+        Pagamento("O campo método de pagamento está vazio");
 
         private final String mensage;
         ErroValidacao(String mensage) {
@@ -128,7 +129,7 @@ public class MainController extends trueFalse{
         switch (tipos) {
             case 0:
                 if (!nomeString.isBlank() && retiradaString != null && metodoString != null && !id.isBlank() && !valor.isBlank()) {
-                    list.add(new listaInputs(nomeString, "NaN", "NaN", metodoString, valor, id, time, retiradaString, notaString));
+                    list.add(new listaInputs(nomeString, "-----", "-----", metodoString, valor, id, time, retiradaString, notaString));
                     nomeInput.clear();
                     TelCliente.clear();
                     Val.clear();
@@ -142,7 +143,7 @@ public class MainController extends trueFalse{
                         ERROR(ErroValidacao.nome);
 
                     } else if (metodoString == null) {
-                        ERROR(ErroValidacao.Val);
+                        ERROR(ErroValidacao.Pagamento);
 
                     } else if (id.isBlank()) {
                         ERROR(ErroValidacao.Pedido);
@@ -162,7 +163,7 @@ public class MainController extends trueFalse{
 
             case 1:
                 if (!nomeString.isBlank() && !telString.isBlank() && !EnderecoString.isBlank() && metodoString != null && !id.isBlank() && !valor.isBlank()) {
-                    list.add(new listaInputs(nomeString, telString, EnderecoString, metodoString, valor, id, time, "NaN", notaString));
+                    list.add(new listaInputs(nomeString, telString, EnderecoString, metodoString, valor, id, time, "-----", notaString));
                     nomeInput.clear();
                     TelCliente.clear();
                     EnderecoCliente.clear();
@@ -182,7 +183,7 @@ public class MainController extends trueFalse{
                         ERROR(ErroValidacao.Endereco);
 
                     } else if (metodoString == null) {
-                        ERROR(ErroValidacao.Val);
+                        ERROR(ErroValidacao.Pagamento);
 
                     } else if (id.isBlank()) {
                         ERROR(ErroValidacao.Pedido);
