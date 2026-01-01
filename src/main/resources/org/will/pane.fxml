@@ -26,7 +26,7 @@
             </Label>
             <Separator layoutY="78.0" prefHeight="0.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="78.0" />
             <TextField fx:id="nomeInput" layoutX="236.8" layoutY="111.4" prefWidth="150.0" styleClass="Inputs" AnchorPane.leftAnchor="236.8" AnchorPane.topAnchor="111.4" />
-            <Label layoutX="14.0" layoutY="150.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Número do pedido ---------" AnchorPane.leftAnchor="12.0">
+            <Label layoutX="14.0" layoutY="150.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Número do pedido ---------" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="150.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </ToggleButton>
-            <AnchorPane fx:id="deliveryPane" layoutY="235.0" prefHeight="120.0" prefWidth="402.0" AnchorPane.bottomAnchor="363.4" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="235.0">
+            <AnchorPane fx:id="deliveryPane" layoutY="235.0" prefHeight="87.0" prefWidth="402.0" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="235.0">
                <children>
                   <TextField fx:id="EnderecoCliente" layoutX="238.0" layoutY="13.0" prefWidth="150.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
                      <styleClass>
@@ -53,21 +53,6 @@
                         <String fx:value="delivery" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="MetodoLabel" layoutX="14.0" layoutY="53.0" prefHeight="16.0" prefWidth="224.0" text="Método de pagamento ------" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="50.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="letters" />
-                        <String fx:value="delivery" />
-                     </styleClass>
-                  </Label>
-                  <ComboBox id="boxes" fx:id="box" layoutX="237.0" layoutY="47.0" prefWidth="150.0" promptText="Escolher" AnchorPane.bottomAnchor="44.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="44.0">
-                     <styleClass>
-                        <String fx:value="boxes" />
-                        <String fx:value="delivery" />
-                     </styleClass>
-                  </ComboBox>
                   <TextField fx:id="TelCliente" layoutX="237.0" layoutY="81.0" prefWidth="150.0" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0">
                      <styleClass>
                         <String fx:value="Inputs" />
@@ -84,36 +69,36 @@
                      </styleClass>
                   </Label>
                </children></AnchorPane>
-            <Label layoutX="14.0" layoutY="115.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Nome do cliente ----------" AnchorPane.leftAnchor="12.0">
+            <Label layoutX="14.0" layoutY="115.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Nome do cliente ----------" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="115.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="labelRetirada" layoutX="13.0" layoutY="373.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Tipo de retirada ---------">
+            <Label fx:id="labelRetirada" layoutX="14.4" layoutY="335.4" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Tipo de retirada ---------" AnchorPane.bottomAnchor="368.6" AnchorPane.leftAnchor="14.4" AnchorPane.topAnchor="335.4">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox fx:id="tipoRetirada" layoutX="236.0" layoutY="367.0" prefWidth="150.0" promptText="Escolher" styleClass="boxes" />
-            <TextField fx:id="Val" layoutX="236.0" layoutY="404.0" prefWidth="150.0">
+            <ComboBox fx:id="tipoRetirada" layoutX="238.4" layoutY="330.6" prefWidth="150.0" promptText="Escolher" styleClass="boxes" AnchorPane.bottomAnchor="361.4" AnchorPane.leftAnchor="238.4" AnchorPane.topAnchor="330.6" />
+            <TextField fx:id="Val" layoutX="236.0" layoutY="404.0" prefWidth="150.0" AnchorPane.bottomAnchor="288.8" AnchorPane.leftAnchor="236.0" AnchorPane.topAnchor="404.0">
                <styleClass>
                   <String fx:value="Inputs" />
                   <String fx:value="delivery" />
                </styleClass>
             </TextField>
-            <Label layoutX="13.0" layoutY="408.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Total a pagar ------------">
+            <Label layoutX="13.0" layoutY="408.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Total a pagar ------------" AnchorPane.bottomAnchor="296.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="408.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button id="prt" layoutX="12.0" layoutY="645.0" mnemonicParsing="false" onAction="#finalizarPedido" text="Finalizar Pedido" AnchorPane.bottomAnchor="49.66666666666663" AnchorPane.leftAnchor="12.0" />
+            <Button id="prt" layoutX="12.0" layoutY="645.0" mnemonicParsing="false" onAction="#finalizarPedido" text="Finalizar Pedido" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="12.0" />
             <Label id="troco" layoutX="237.0" layoutY="439.0" prefHeight="16.0" prefWidth="150.0" styleClass="letters">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <TextArea id="area" fx:id="note" layoutX="11.333333333333334" layoutY="440.33333333333326" prefHeight="195.0" prefWidth="378.0" promptText="Nota do cliente" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="12.0" />
-            <Label id="numPedido" layoutX="236.0" layoutY="145.0" prefHeight="21.0" prefWidth="150.0">
+            <Label id="numPedido" layoutX="236.0" layoutY="145.0" prefHeight="21.0" prefWidth="150.0" AnchorPane.leftAnchor="236.0" AnchorPane.topAnchor="145.0">
                <font>
                   <Font size="15.5" />
                </font>
@@ -134,6 +119,17 @@
                </columnResizePolicy>
             </TableView>
             <Button id="cancel" layoutX="415.0" layoutY="683.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar pedido" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="415.0" />
+            <Label layoutX="14.0" layoutY="374.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Método de pagamento ------">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox id="boxes" fx:id="box" layoutX="237.0" layoutY="367.0" prefWidth="150.0" promptText="Escolher">
+               <styleClass>
+                  <String fx:value="boxes" />
+                  <String fx:value="delivery" />
+               </styleClass>
+            </ComboBox>
          </children></AnchorPane>
    </children>
 </VBox>

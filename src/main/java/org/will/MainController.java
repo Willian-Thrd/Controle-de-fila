@@ -1,5 +1,8 @@
 package org.will;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,7 +29,7 @@ public class MainController extends trueFalse{
     @FXML
     private ComboBox<String> box, tipoRetirada;
     @FXML
-    private Label labelRetirada, EnderecoLabel, MetodoLabel, TelLabel;
+    private Label labelRetirada, EnderecoLabel, TelLabel;
     @FXML
     private TextField EnderecoCliente, TelCliente, nomeInput;
     @FXML
@@ -35,6 +38,8 @@ public class MainController extends trueFalse{
     private TableColumn<listaInputs, String> nome, tel, endereco, id, hr, retirada, nota, formaPagamento;
 
     ObservableList<listaInputs> list = FXCollections.observableArrayList();
+    LocalTime now = LocalTime.now();
+    DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("HH:mm");
     int tipos = 0;
 
     @FXML
@@ -74,7 +79,7 @@ public class MainController extends trueFalse{
     private void applicationOpacity(double opacity, double oapcity2) {
     
         TextField[] deliverFields = {EnderecoCliente, TelCliente};
-        Label[] deliveryLabels = {EnderecoLabel, MetodoLabel, TelLabel, labelRetirada};
+        Label[] deliveryLabels = {EnderecoLabel, TelLabel, labelRetirada};
 
         for (TextField tf : deliverFields) {
             tf.setOpacity(opacity);
@@ -83,8 +88,6 @@ public class MainController extends trueFalse{
         for (Label lbl : deliveryLabels) {
             lbl.setOpacity(opacity);
         }
-
-        box.setOpacity(opacity);
 
         tipoRetirada.setOpacity(oapcity2);
         labelRetirada.setOpacity(oapcity2);
@@ -98,11 +101,18 @@ public class MainController extends trueFalse{
         String metodoString = box.getValue();
         String retiradaString = tipoRetirada.getValue();
         String notaString = note.getText();
+        String time = now.format(fomatter);
 
         switch (tipos) {
             case 0:
-                if (!nomeString.isBlank() && retiradaString != null) {
-                    list.add(new listaInputs(nomeString, "NaN", "NaN", "NaN", "NaN", "12:00", retiradaString, notaString));
+                if (!nomeString.isBlank() && retiradaString != null && metodoString != null) {
+                    list.add(new listaInputs(nomeString, "NaN", "NaN", metodoString, "NaN", time, retiradaString, notaString));
+                    nomeInput.clear();
+                    TelCliente.clear();
+                    EnderecoCliente.clear();
+                    box.getSelectionModel().clearSelection();
+                    tipoRetirada.getSelectionModel().clearSelection();
+                    note.clear();
                 } else {
                     ERROR("Por favor, preencha todos os campos.");
                 }
@@ -110,19 +120,18 @@ public class MainController extends trueFalse{
 
             case 1:
                 if (!nomeString.isBlank() && !telString.isBlank() && !EnderecoString.isBlank() && metodoString != null) {
-                    list.add(new listaInputs(nomeString, telString, EnderecoString, metodoString, "NaN", "12:00", retiradaString, notaString));
+                    list.add(new listaInputs(nomeString, telString, EnderecoString, metodoString, "NaN", time, "NaN", notaString));
+                    nomeInput.clear();
+                    TelCliente.clear();
+                    EnderecoCliente.clear();
+                    box.getSelectionModel().clearSelection();
+                    tipoRetirada.getSelectionModel().clearSelection();
+                    note.clear();
                 } else {
                     ERROR("Por favor, preencha todos os campos.");
                 }
             break;
         }
-       
-        nomeInput.clear();
-        TelCliente.clear();
-        EnderecoCliente.clear();
-        box.getSelectionModel().clearSelection();
-        tipoRetirada.getSelectionModel().clearSelection();
-        note.clear();
     }
 
     public void ERROR(String erro) {

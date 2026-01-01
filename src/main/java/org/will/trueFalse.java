@@ -10,13 +10,11 @@ public class trueFalse {
     @FXML
     protected TextField TelCliente;
     @FXML
-    private ComboBox<String> box, tipoRetirada;
+    private ComboBox<String> tipoRetirada;
 
     public void trueFalse(Boolean checker, Boolean mouseTransparent) {
         EnderecoCliente.setEditable(checker);
         TelCliente.setEditable(checker);
-        box.setFocusTraversable(checker);
-        box.setMouseTransparent(mouseTransparent);
         tipoRetirada.setFocusTraversable(mouseTransparent);
         tipoRetirada.setMouseTransparent(checker);
     }
