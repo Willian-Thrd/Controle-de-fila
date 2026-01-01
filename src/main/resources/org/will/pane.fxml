@@ -29,7 +29,6 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="236.8" layoutY="146.2" prefWidth="150.0" styleClass="Inputs" AnchorPane.leftAnchor="236.8" AnchorPane.topAnchor="146.2" />
             <ToggleButton id="toggle" fx:id="toggle" layoutX="14.4" layoutY="191.0" mnemonicParsing="false" text="Delivery" AnchorPane.leftAnchor="14.4" AnchorPane.topAnchor="191.0">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -105,18 +104,18 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="443.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Troco total --------------">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Button id="prt" layoutX="10.0" layoutY="640.0" mnemonicParsing="false" text="Finalizar Pedido" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="12.0" />
+            <Button id="prt" layoutX="12.0" layoutY="645.0" mnemonicParsing="false" text="Finalizar Pedido" AnchorPane.bottomAnchor="49.66666666666663" AnchorPane.leftAnchor="12.0" />
             <Label id="troco" layoutX="237.0" layoutY="439.0" prefHeight="16.0" prefWidth="150.0" styleClass="letters">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextArea id="area" layoutY="474.0" prefHeight="150.0" prefWidth="378.0" promptText="Nota do cliente" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="12.0" />
+            <TextArea id="area" layoutX="11.333333333333334" layoutY="440.33333333333326" prefHeight="195.0" prefWidth="378.0" promptText="Nota do cliente" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="12.0" />
+            <Label id="numPedido" layoutX="236.0" layoutY="145.0" prefHeight="21.0" prefWidth="150.0">
+               <font>
+                  <Font size="15.5" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </children>
 </VBox>
