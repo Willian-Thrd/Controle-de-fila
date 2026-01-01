@@ -28,3 +28,7 @@ Vamos imaginar uma lanchonete pequena. Ela não possui um sistema para gerir seu
 ### Informações técnicas
 
 O programa no geral foi programado com base em JavaFX. Onde a interface foi feita na linguagem FXML - Com auxílio de programas gráficos - e a parte lógica do programa foi feita com base em Java. O design do programa como cores dos componentes, letras, formas e tamanhos foram configurados a partir de arquivos CSS.
+
+## Observação
+
+### Execulte o projeto através do arquivo executador.bat; é por ele onde se inicia o projeto

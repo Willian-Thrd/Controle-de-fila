@@ -1,5 +1,5 @@
 @echo off
-cd /d "%~dp0target"
+cd /d "%~dp0"
 
 echo Iniciando boot...
 call queueController.bat
