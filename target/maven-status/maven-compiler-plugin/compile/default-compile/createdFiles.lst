@@ -1,5 +1,6 @@
 org\will\App.class
 org\will\MainController.class
+org\will\MainController$ErroValidacao.class
 org\will\trueFalse.class
 org\will\Main.class
 org\will\listaInputs.class

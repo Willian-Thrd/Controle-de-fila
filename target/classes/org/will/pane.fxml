@@ -98,18 +98,14 @@
                </font>
             </Label>
             <TextArea id="area" fx:id="note" layoutX="11.333333333333334" layoutY="440.33333333333326" prefHeight="195.0" prefWidth="378.0" promptText="Nota do cliente" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="12.0" />
-            <Label id="numPedido" layoutX="236.0" layoutY="145.0" prefHeight="21.0" prefWidth="150.0" AnchorPane.leftAnchor="236.0" AnchorPane.topAnchor="145.0">
-               <font>
-                  <Font size="15.5" />
-               </font>
-            </Label>
             <TableView id="lista" fx:id="lista" layoutX="403.0" prefHeight="600.0" prefWidth="650.0" stylesheets="@listaStyle.css" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
               <columns>
                 <TableColumn fx:id="nome" prefWidth="75.0" text="Nome" />
                   <TableColumn fx:id="tel" prefWidth="75.0" text="Tel." />
-                  <TableColumn fx:id="formaPagamento" prefWidth="75.0" text="Forma. pagamento" />
+                  <TableColumn fx:id="formaPagamento" prefWidth="75.0" text="Pagamento" />
+                  <TableColumn fx:id="ValTotal" prefWidth="75.0" text="Valor Total" />
                   <TableColumn fx:id="endereco" prefWidth="75.0" text="Endereço" />
-                <TableColumn fx:id="id" prefWidth="75.0" text="Id pedido" />
+                <TableColumn fx:id="id" prefWidth="75.0" text="Num. Pedido" />
                   <TableColumn fx:id="hr" prefWidth="75.0" text="Hr. pedido" />
                   <TableColumn fx:id="retirada" prefWidth="75.0" text="Retirada" />
                   <TableColumn fx:id="nota" prefWidth="75.0" text="Nota" />
@@ -130,6 +126,7 @@
                   <String fx:value="delivery" />
                </styleClass>
             </ComboBox>
+            <TextField fx:id="NumPedido" layoutX="236.0" layoutY="144.0" prefWidth="150.0" styleClass="Inputs" />
          </children></AnchorPane>
    </children>
 </VBox>

@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -15,7 +16,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -31,16 +31,35 @@ public class MainController extends trueFalse{
     @FXML
     private Label labelRetirada, EnderecoLabel, TelLabel;
     @FXML
-    private TextField EnderecoCliente, TelCliente, nomeInput;
+    private TextField EnderecoCliente, TelCliente, nomeInput, Val, NumPedido;
     @FXML
     private TableView<listaInputs> lista;
     @FXML
-    private TableColumn<listaInputs, String> nome, tel, endereco, id, hr, retirada, nota, formaPagamento;
+    private TableColumn<listaInputs, String> nome, tel, endereco, id, hr, retirada, nota, formaPagamento, ValTotal;
 
     ObservableList<listaInputs> list = FXCollections.observableArrayList();
-    LocalTime now = LocalTime.now();
     DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("HH:mm");
+    LocalTime now = LocalTime.now();
     int tipos = 0;
+
+    enum ErroValidacao {
+        nome("O campo do nome está vazio."),
+        Endereco("O campo do endereço está vazio."),
+        Tel("O campo do telefone está vazio."),
+        Val("O campo do valor a se pagar está vazio."),
+        Pedido("O campo do pedido está vazio."),
+        box("O campo do método de pagamento está vazio."),
+        Retirada("O campo do método de retirada está vazio.");
+
+        private final String mensage;
+        ErroValidacao(String mensage) {
+            this.mensage = mensage;
+        }
+        public String getMensage() {
+            return mensage;
+        }
+
+    }
 
     @FXML
     private void initialize() {
@@ -53,6 +72,7 @@ public class MainController extends trueFalse{
         retirada.setCellValueFactory(new PropertyValueFactory<>("retirada"));
         nota.setCellValueFactory(new PropertyValueFactory<>("nota"));
         formaPagamento.setCellValueFactory(new PropertyValueFactory<>("metodo"));
+        ValTotal.setCellValueFactory(new PropertyValueFactory<>("valor"));
 
         trueFalse(false, true);
         applicationOpacity(0.5, 1.0);
@@ -99,47 +119,83 @@ public class MainController extends trueFalse{
         String telString = TelCliente.getText();
         String EnderecoString = EnderecoCliente.getText();
         String metodoString = box.getValue();
+        String id = NumPedido.getText();
         String retiradaString = tipoRetirada.getValue();
         String notaString = note.getText();
         String time = now.format(fomatter);
+        String valor = Val.getText();
 
         switch (tipos) {
             case 0:
-                if (!nomeString.isBlank() && retiradaString != null && metodoString != null) {
-                    list.add(new listaInputs(nomeString, "NaN", "NaN", metodoString, "NaN", time, retiradaString, notaString));
+                if (!nomeString.isBlank() && retiradaString != null && metodoString != null && !id.isBlank() && !valor.isBlank()) {
+                    list.add(new listaInputs(nomeString, "NaN", "NaN", metodoString, valor, id, time, retiradaString, notaString));
                     nomeInput.clear();
                     TelCliente.clear();
+                    Val.clear();
+                    NumPedido.clear();
                     EnderecoCliente.clear();
                     box.getSelectionModel().clearSelection();
                     tipoRetirada.getSelectionModel().clearSelection();
                     note.clear();
                 } else {
-                    ERROR("Por favor, preencha todos os campos.");
+                    if (nomeString.isBlank()) {
+                        ERROR(ErroValidacao.nome);
+
+                    } else if (metodoString == null) {
+                        ERROR(ErroValidacao.Val);
+
+                    } else if (id.isBlank()) {
+                        ERROR(ErroValidacao.Pedido);
+
+                    } else if (box == null) {
+                        ERROR(ErroValidacao.box);
+
+                    } else if (retiradaString.isBlank()) {
+                        ERROR(ErroValidacao.Retirada);
+                        
+                    } else if (valor.isBlank()) {
+                        ERROR(ErroValidacao.Val);
+                    }
+
                 }
             break;
 
             case 1:
-                if (!nomeString.isBlank() && !telString.isBlank() && !EnderecoString.isBlank() && metodoString != null) {
-                    list.add(new listaInputs(nomeString, telString, EnderecoString, metodoString, "NaN", time, "NaN", notaString));
+                if (!nomeString.isBlank() && !telString.isBlank() && !EnderecoString.isBlank() && metodoString != null && !id.isBlank() && !valor.isBlank()) {
+                    list.add(new listaInputs(nomeString, telString, EnderecoString, metodoString, valor, id, time, "NaN", notaString));
                     nomeInput.clear();
                     TelCliente.clear();
                     EnderecoCliente.clear();
+                    NumPedido.clear();
+                    Val.clear();
                     box.getSelectionModel().clearSelection();
                     tipoRetirada.getSelectionModel().clearSelection();
                     note.clear();
                 } else {
-                    ERROR("Por favor, preencha todos os campos.");
+                    if (nomeString.isBlank()) {
+                        ERROR(ErroValidacao.nome);
+
+                    } else if (telString.isBlank()) {
+                        ERROR(ErroValidacao.Tel);
+
+                    } else if (EnderecoString.isBlank()) {
+                        ERROR(ErroValidacao.Endereco);
+
+                    } else if (metodoString == null) {
+                        ERROR(ErroValidacao.Val);
+
+                    } else if (id.isBlank()) {
+                        ERROR(ErroValidacao.Pedido);
+
+                    } else if (box == null) {
+                        ERROR(ErroValidacao.box);
+
+                    } else if (valor.isBlank()) {
+                        ERROR(ErroValidacao.Val);
+                    }
                 }
             break;
         }
-    }
-
-    public void ERROR(String erro) {
-        Alert error = new Alert(AlertType.ERROR);
-        error.setTitle("ERROR");
-        error.setHeaderText("Dados inválidos");
-        error.setContentText(erro);
-        error.showAndWait();
     }
 
     @FXML
@@ -149,5 +205,14 @@ public class MainController extends trueFalse{
         if (index != null) {
             lista.getItems().remove(index);
         }
+    }
+
+    public void ERROR(ErroValidacao erro) {
+        Alert error = new Alert(AlertType.ERROR);
+        error.setTitle("ERROR");
+        error.setHeaderText("Dados inválidos");
+        error.setContentText(erro.getMensage());
+
+        error.showAndWait();
     }
 }

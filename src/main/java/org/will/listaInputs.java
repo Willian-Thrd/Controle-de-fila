@@ -11,12 +11,14 @@ public class listaInputs {
     private final SimpleStringProperty hr;
     private final SimpleStringProperty retirada;
     private final SimpleStringProperty nota;
+    private final SimpleStringProperty valor;
 
-    public listaInputs(String nome, String tel, String endereco, String metodo, String id, String hr, String retirada, String nota) {
+    public listaInputs(String nome, String tel, String endereco, String metodo, String valor, String id, String hr, String retirada, String nota) {
         this.nome = new SimpleStringProperty(nome);
         this.tel = new SimpleStringProperty(tel);
         this.endereco = new SimpleStringProperty(endereco);
         this.metodo = new SimpleStringProperty(metodo);
+        this.valor = new SimpleStringProperty(valor);
         this.id = new SimpleStringProperty(id);
         this.hr = new SimpleStringProperty(hr);
         this.retirada = new SimpleStringProperty(retirada);
@@ -37,6 +39,10 @@ public class listaInputs {
 
     public String getMetodo() {
         return metodo.get();
+    }
+
+    public String getValor() {
+        return valor.get();
     }
 
     public String getId() {
