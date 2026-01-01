@@ -12,7 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.will.MainController">
+=======
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.will.MainController">
+>>>>>>> 74f2110 (Dando só uma refinada de leve)
    <children>
       <AnchorPane id="pane" prefHeight="720.0" prefWidth="1080.0">
          <children>
@@ -29,7 +33,10 @@
                   <Font size="14.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <TextField layoutX="236.8" layoutY="146.2" prefWidth="150.0" styleClass="Inputs" AnchorPane.leftAnchor="236.8" AnchorPane.topAnchor="146.2" />
+=======
+>>>>>>> 74f2110 (Dando só uma refinada de leve)
             <ToggleButton id="toggle" fx:id="toggle" layoutX="14.4" layoutY="191.0" mnemonicParsing="false" text="Delivery" AnchorPane.leftAnchor="14.4" AnchorPane.topAnchor="191.0">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -105,6 +112,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <Label layoutX="13.0" layoutY="443.0" prefHeight="16.0" prefWidth="224.0" styleClass="letters" text="Troco total --------------">
                <font>
                   <Font size="14.0" />
@@ -117,6 +125,15 @@
                </font>
             </Label>
             <TextArea id="area" layoutY="474.0" prefHeight="150.0" prefWidth="378.0" promptText="Nota do cliente" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="12.0" />
+=======
+            <Button id="prt" layoutX="14.4" layoutY="640.1999999999999" mnemonicParsing="false" text="Finalizar Pedido" AnchorPane.bottomAnchor="54.200000000000045" AnchorPane.leftAnchor="14.4" />
+            <TextArea id="area" layoutX="12.0" layoutY="436.59999999999997" prefHeight="195.0" prefWidth="378.0" promptText="Nota do cliente" AnchorPane.bottomAnchor="88.20000000000005" AnchorPane.leftAnchor="12.0" />
+            <Label id="numPedido" layoutX="237.0" layoutY="146.0" prefHeight="17.0" prefWidth="150.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+>>>>>>> 74f2110 (Dando só uma refinada de leve)
          </children></AnchorPane>
    </children>
 </VBox>

@@ -8,7 +8,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 
 public class MainController extends trueFalse{
-
     @FXML
     private ToggleButton toggle;
     @FXML
